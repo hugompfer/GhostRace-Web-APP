@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="newest stylesheet" type="text/css" href="styles/style.css">
+    <link rel="newest stylesheet" type="text/css" href="styles/modal.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="scripts/informationHandler.js" ></script>
+    <script src="scripts/nav.js" defer></script>
+    <script src="scripts/video.js" defer></script>
+    <script src="scripts/loginRegister.js" defer></script>
+    <script src="scripts/chart.js" defer></script>
+    <script src="scripts/modal.js" defer></script>
+    <script src="scripts/selectHandler.js" defer></script>
+    <script src="scripts/pageHandler.js" defer></script>
+    <title>PI Project</title>
+</head>
+
+<body>
+    <nav id="myNav">
+        <div id="topnav">
+            <img id="title" src="images/logo2.png" />
+            <img id="icon" src="images/menu-options.png" />
+        </div>
+        <ul id="list" onclick="closeDropDownMenu();">
+            <li class="menuitems" id="aboutLI">
+                <a href="#About">
+                    <img src="images/about.png" />Sobre</a>
+                <span class="tooltiptext d_none">Sobre</span>
+            </li>
+            <li class="menuitems" id="playersLI">
+                <a href="#Players">
+                    <img src="images/player.png" />Jogadores</a>
+                <span class="tooltiptext">Jogadores</span>
+            </li>
+            <li class="menuitems" id="sessionLI">
+                <a href="#Session">
+                    <img src="images/session.png" />Sessões de jogo</a>
+                <span class="tooltiptext">Sessões de jogo</span>
+            </li>
+            <li class="menuitems" id="statisticsLI">
+                <a id="Statistics">
+                    <img src="images/statistics.png" />Estatísticas
+                    <img id="caret-down" src="images/caret-down.png" />
+                </a>
+                <ul id="submenu">
+                    <li class="menuitems" id="rankingLI">
+                        <a class="inside" href="#Stats">
+                            <img src="images/ranking.png" />Ranking</a>
+                        <span class="tooltiptext">Ranking</span>
+                    </li>
+                    <li class="menuitems" id="timeLI">
+                        <a class="inside" href="#Stats">
+                            <img src="images/time.png" />Tempo por jogo</a>
+                        <span class="tooltiptext">Tempo por jogo</span>
+                    </li>
+                    <li class="menuitems" id="countryLI">
+                        <a class="inside" href="#Stats">
+                            <img src="images/flag.png" />Jogador por país</a>
+                        <span class="tooltiptext">Jogador por país</span>
+                    </li>
+                </ul>
+            </li>
+            <li class="menuitems" id="accountLI">
+                <a href="#Account">
+                    <img src="images/account.png" />Conta de utilizador</a>
+                <span class="tooltiptext">Conta de utilizador</span>
+            </li>
+            <li class="menuitems" id="loginLI">
+                <a href="#Login">
+                    <img src="images/login.png" />Entrar/Registar</a>
+                <span class="tooltiptext">Entrar/Registar</span>
+            </li>
+            <li class="menuitems" id="LogoutLI">
+                <a href="#Login">
+                    <img src="images/logout.png" />Logout</a>
+                <span class="tooltiptext">Logout</span>
+            </li>
+        </ul>
+    </nav>
+    <main id="main">
+        <header>
+            <div id="header">
+                <img id="header-image" src="images/header.jpg" />
+                <img id="play-button" src="images/play-button.png" />
+            </div>
+        </header>
+        <div id="player">
+            <iframe id="video" src="https://www.youtube.com/embed/z0mVbg3XYj0?start=1&theme=dark&color=white&autohide=1&modestbranding=1&showinfo=0&rel=0"
+                frameborder="0">
+            </iframe>
+            <span id="close-player">&#10006;</span>
+        </div>
+        <section id="About">
+            <h1>Sobre</h1>
+            <hr/>
+            <div class="container">
+                <figure>
+                    <img id="right" src="images/speed1.jpg" alt="">
+                    <br/>
+                    <figcaption>Ilustração GhostRace</figcaption>
+                </figure>
+                <p>GhostRace é um jogo em 2 dimensões do tipo plataforma. Tendo um conjunto de personagens à escolha possuindo
+                    cada uma delas determinadas características de acordo com uma distribuição de pontos(poderás definir
+                    os mesmos ao teu gosto), terás de ultrapassar obstáculos à medida que avanças no mapa, seja através de
+                    movimentos simples como saltar, agachar, correr, destruir obstáculos ou movimentos mais complexos que
+                    poderão ser adquiridos da aquisição de itens. O principal objetivo será, no fundo, bater recordes temporais,
+                    tentando percorrer o mapa no menor tempo possível. Existe tambem uma opção multiplayer no qual um jogador
+                    pode jogar com a shadow de um amigo em cada nível se o mesmo já o tiver concluído.
+
+                </p>
+                <div id="controlsMods">
+                    <div id="controls">
+                        <h2>Controlos</h2>
+                        <br>
+                        <img src="images/controls.jpg" alt="">
+                    </div>
+                    <div id="mods">
+                        <h2>Modos de jogo</h2>
+                        <h3>
+                            <b>SinglePlayer</b>
+                        </h3>
+                        <p>Completa todos os niveis, percorrendo o mapa de cada um no menor tempo possível e adquire estrelas
+                            de acordo com o tempo realizado. Ao completares cada nivel poderás competir com so teus amigos
+                            no modo multiplayer.</p>
+                        <h3>
+                            <b>MultiPlayer</b>
+                        </h3>
+                        <p>Desafia os teus amigos em cada nivel completado e percorre o mapa de forma a atingir um tempo menor
+                            que o atingido pelo teu amigo, verás os passos do teu amigo através da shadow do mesmo. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="Information">
+            <h1 id="titleDiv"></h1>
+            <hr/>
+            <div class="container" id="containerInformation">
+                <div class="tableGroup" id="group">
+                    <div class="tableTile">
+                        <div class="tableName">
+                            <h2>Gerir
+                                <b id="subtitle"></b>
+                            </h2>
+                        </div>
+                        <div class="tableOptions" id="tableButtons">
+                        </div>
+                    </div>
+                    <div class="tableSpace" id="tableZone">
+                    </div>
+                </div>
+            </div>      
+        </section>
+        <section id="Stats">
+            <h1>Estatísticas</h1>
+            <hr/>
+            <div class="container">
+                <div id="topOptions">
+                    <select class="customSelect" id="statsOptions">
+                        <option value="ranking">Ranking</option>
+                        <option value="timeplayed">Tempo jogado</option>
+                        <option value="playercountry">Jogadores por países</option>
+                        <option value="none">Nenhum</option>
+                    </select>
+                    <select class="customSelect" id="option">
+                        <option value="table">Tabela</option>
+                        <option value="bar">Gráfico de barras</option>
+                        <option value="pie">Gráfico de setores</option>
+                    </select>
+                </div>
+                <div id="tableStatistics">
+                    <input type="text" id="myInput" onkeyup="filter()" placeholder="Search for type..." title="Type in a name">
+                    <div class="tableGroup">
+                        <div class="tableTile ">
+                            <div class="tableName">
+                                <h2>Gerir
+                                    <b id="category">Estatisticas</b>
+                                </h2>
+                            </div>
+                            <div class="tableOptions"id="tableStatsButtons">
+                            </div>
+                        </div>
+                        <div class="tableSpace" id="tableStatisticSpace">
+                        </div>
+                    </div>
+                </div>
+                <div class="group" id="chartZone">
+                    <canvas id="myChart" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+        </section>
+        <section id="Account">
+            <h1>Conta de utilizador</h1>
+            <hr/>
+            <div class="container">
+                <div class="editable">
+                    <h2>Edite os seus dados</h2>
+                    <form action="" id="accountForm">
+                        <div class="row">
+                            <div class="col35">
+                                <label>Username</label>
+                            </div>
+                            <div class="col65">
+                                <input type="text" id="usernameAcc" placeholder="Seu Username..">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col35">
+                                <label>Palavra-chave</label>
+                            </div>
+                            <div class="col65">
+                                <input type="text" id="passwordAcc" placeholder="Sua palava-chave..">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col35">
+                                <label>Email</label>
+                            </div>
+                            <div class="col65">
+                                <input type="text" id="emailAcc" placeholder="Seu email..">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col35">
+                                <label>Data de nascimento</label>
+                            </div>
+                            <div class="col65">
+                                <input type="date" id="birthdateAcc" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col35">
+                                <label>País</label>
+                            </div>
+                            <div class="col65">
+                                <select class="general" id="countryAcc">
+                                    <option value="" disabled selected>Selecione o seu país</option>
+                                    <option value="Portugal">Portugal</option>
+                                    <option value="Inglaterra">Inglaterra</option>
+                                    <option value="Espanha">Espanha</option>
+                                    <option value="França">França</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="confirm">
+                            <input id="confirmAcc" type="submit" value="Confirmar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <div class="modal" id="login">
+            <span id="close">&times;</span>
+            <div id="mainLogin">
+                <div id="contCentral">
+                    <form action="" id="form">
+                        <div id="tabsLogin">
+                            <ul id='ulTabs'>
+                                <li id="active">
+                                    <a href="#" id="signIn">SIGN IN</a>
+                                    <span class="line"></span>
+                                </li>
+                                <li>
+                                    <a href="#up" id="signUp">SIGN UP</a>
+                                    <span class="line"></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="inputs">
+                            <input type="text" class="inputform d_block active_inp" placeholder="USERNAME" id="nameLR" />
+                            <input type="password" class="inputform d_block active_inp" placeholder="PASSWORD" id="passLR" />
+                            <input type="text" class="inputform " placeholder="EMAIL" id="emailLR" />
+                            <input type="date" class="inputform " placeholder="BIRTHDATE" id="dateLR" />
+                            <select name="country" id="countryLR" class="inputform">
+                                <option value="" disabled selected>Selecione o seu país</option>
+                                <option value="Portugal">Portugal</option>
+                                <option value="Inglaterra">Inglaterra</option>
+                                <option value="Espanha">Espanha</option>
+                                <option value="França">França</option>
+                            </select>
+                        </div>
+                        <div id="btnContent">
+                            <button id="btnSign">SIGN IN</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="playerModal">
+            <div class="containerPopUp">
+                <div class="editable popUp">
+                    <h2 id="playerTitleText">Adicionar Jogador</h2>
+                    <form action="" class="form" id="playerModalForm">
+                        <div class="row">
+                            <div class="col35">
+                                <label>Username</label>
+                            </div>
+                            <div class="col65">
+                                <input type="text" id="usernamePlayer" placeholder="Seu username..">
+                            </div>
+                        </div>
+                        <div class="row pw">
+                            <div class="col35">
+                                <label>Palavra-chave</label>
+                            </div>
+                            <div class="col65">
+                                <input type="password" id="passwordPlayer" placeholder="Sua palava-chave..">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col35">
+                                <label>Email</label>
+                            </div>
+                            <div class="col65">
+                                <input type="text" id="emailPlayer" placeholder="Seu email..">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col35">
+                                <label>Data de nascimento</label>
+                            </div>
+                            <div class="col65">
+                                <input type="date" id="birthdatePlayer" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col35">
+                                <label>Country</label>
+                            </div>
+                            <div class="col65">
+                                <select class="general" id="countryPlayer">
+                                    <option value="" disabled selected>Selecione o seu país</option>
+                                    <option value="Portugal">Portugal</option>
+                                    <option value="Inglaterra">Inglaterra</option>
+                                    <option value="Espanha">Espanha</option>
+                                    <option value="França">França</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="confirm">
+                            <input type="submit" id="playerConfirm" value="Confirmar">
+                            <input type="button" class="cancel" value="Cancelar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="deleteModal">
+            <div class="containerPopUp">
+                <div class="editable popUp">
+                    <h2 id="deleteTitle">Eliminar Jogadores</h2>
+                    <div class="row">
+                        <p>Tem a certeza que prende eliminar os registos selecionados?</p>
+                        <br>
+                    </div>
+                    <div class="confirm">
+                        <input type="submit" id="deleteConfirm" value="Confirmar">
+                        <input type="button" class="cancel" value="Cancelar">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="sessionModal">
+            <div class="containerPopUp">
+                <div class="editable popUp">
+                    <h2 id="sessionTitleText">Adicionar Sessão de jogo</h2>
+                    <form action="" class="form">
+                        <div class="row">
+                            <div class="col35">
+                                <label>Data</label>
+                            </div>
+                            <div class="col65">
+                                <input type="date" id="dateSession">
+                            </div>
+                        </div>
+                        <div class="row pw">
+                            <div class="col35">
+                                <label>Nível</label>
+                            </div>
+                            <div class="col65">
+                                <select id="levelSession" class="general">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row pw">
+                            <div class="col35">
+                                <label>Personagem</label>
+                            </div>
+                            <div class="col65">
+                                <select id="characters" class="general">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row pw">
+                            <div class="col35">
+                                <label>Sessão contra</label>
+                            </div>
+                            <div class="col65">
+                                <input type="number" id="pagainst" placeholder="Sessão contra...">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col35">
+                                <label>Jogador</label>
+                            </div>
+                            <div class="col65">
+                                <input type="number" id="playerSession" placeholder="Jogador..">
+                            </div>
+                        </div>
+                        <div class="confirm">
+                            <input type="submit" id="sessionConfirm" value="Confirmar">
+                            <input type="button" class="cancel" value="Cancelar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="statisticsModal">
+            <div class="containerPopUp">
+                <div class="editable popUp">
+                    <h2 id="statisticsTitleText">Adicionar Estatística</h2>
+                    <form action="" class="form">
+                        <div class="row">
+                            <div class="col35">
+                                <label>Tipo</label>
+                            </div>
+                            <div class="col65">
+                                <select class="general" id="statisticType" name="type">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row pw">
+                            <div class="col35">
+                                <label>Valor</label>
+                            </div>
+                            <div class="col65">
+                                <input type="text" id="value" placeholder="Valor..">
+                            </div>
+                        </div>
+                        <div class="row pw">
+                            <div class="col35">
+                                <label>IDSessão</label>
+                            </div>
+                            <div class="col65">
+                                <input type="text" id="idSessaoStatistic" placeholder="Sessão..">
+                            </div>
+                        </div>
+                        <div class="confirm">
+                            <input type="submit" id="statisticConfirm" value="Confirmar">
+                            <input type="button" class="cancel" value="Cancelar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="noPermission" id="permission">
+            <p>Não tem permissões para visualizar o conteudo.<br/>
+                Faça login.
+            </p>
+        </div>
+    </main>
+</body>
+
+</html>
